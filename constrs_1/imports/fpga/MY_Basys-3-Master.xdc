@@ -5,8 +5,8 @@
 
 
 ## Clock signal
-#set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_34 ,Sch=CLK100MHZ
-#create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports sysclk]
+set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { i_clk }]; #IO_L12P_T1_MRCC_34 ,Sch=CLK100MHZ
+create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports i_clk]
 
 
 ## Switches
@@ -34,11 +34,11 @@
 set_property -dict { PACKAGE_PIN U16  IOSTANDARD LVCMOS33 } [get_ports { o_led[0]  }]; #IO_L23N_T3_A02_D18_14        ,Sch=LED0
 set_property -dict { PACKAGE_PIN E19  IOSTANDARD LVCMOS33 } [get_ports { o_led[1]  }]; #IO_L3N_T0_DQS_EMCCLK_14      ,Sch=LED1
 set_property -dict { PACKAGE_PIN U19  IOSTANDARD LVCMOS33 } [get_ports { o_led[2]  }]; #IO_L15P_T2_DQS_RDWR_B_14     ,Sch=LED2
-#set_property -dict { PACKAGE_PIN V19  IOSTANDARD LVCMOS33 } [get_ports { led[3]  }]; #IO_L15N_T2_DQS_DOUT_CSO_B_14 ,Sch=LED3
-#set_property -dict { PACKAGE_PIN W18  IOSTANDARD LVCMOS33 } [get_ports { led[4]  }]; #IO_L16P_T2_CSI_B_14          ,Sch=LED4
-#set_property -dict { PACKAGE_PIN U15  IOSTANDARD LVCMOS33 } [get_ports { led[5]  }]; #IO_L23P_T3_A03_D19_14        ,Sch=LED5
-#set_property -dict { PACKAGE_PIN U14  IOSTANDARD LVCMOS33 } [get_ports { led[6]  }]; #IO_25_14                     ,Sch=LED6
-#set_property -dict { PACKAGE_PIN V14  IOSTANDARD LVCMOS33 } [get_ports { led[7]  }]; #IO_L24N_T3_A00_D16_14        ,Sch=LED7
+set_property -dict { PACKAGE_PIN V19  IOSTANDARD LVCMOS33 } [get_ports { o_led[3]  }]; #IO_L15N_T2_DQS_DOUT_CSO_B_14 ,Sch=LED3
+set_property -dict { PACKAGE_PIN W18  IOSTANDARD LVCMOS33 } [get_ports { o_led[4]  }]; #IO_L16P_T2_CSI_B_14          ,Sch=LED4
+set_property -dict { PACKAGE_PIN U15  IOSTANDARD LVCMOS33 } [get_ports { o_led[5]  }]; #IO_L23P_T3_A03_D19_14        ,Sch=LED5
+set_property -dict { PACKAGE_PIN U14  IOSTANDARD LVCMOS33 } [get_ports { o_led[6]  }]; #IO_25_14                     ,Sch=LED6
+set_property -dict { PACKAGE_PIN V14  IOSTANDARD LVCMOS33 } [get_ports { o_led[7]  }]; #IO_L24N_T3_A00_D16_14        ,Sch=LED7
 #set_property -dict { PACKAGE_PIN V13  IOSTANDARD LVCMOS33 } [get_ports { led[8]  }]; #IO_L24P_T3_A01_D17_14        ,Sch=LED8
 #set_property -dict { PACKAGE_PIN V3   IOSTANDARD LVCMOS33 } [get_ports { led[9]  }]; #IO_L6P_T0_34                 ,Sch=LED9
 #set_property -dict { PACKAGE_PIN W3   IOSTANDARD LVCMOS33 } [get_ports { led[10] }]; #IO_L6N_T0_VREF_34            ,Sch=LED10
@@ -69,11 +69,11 @@ set_property -dict { PACKAGE_PIN U19  IOSTANDARD LVCMOS33 } [get_ports { o_led[2
 ##Buttons
 
 set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { i_reset }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
-set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports { i_btn }]; #IO_L17N_T2_A13_D29_14 ,Sch=BTNU
+#set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports { i_btn }]; #IO_L17N_T2_A13_D29_14 ,Sch=BTNU
 #set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { btnL }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
 #set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { btnR }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
 #set_property -dict { PACKAGE_PIN U17  IOSTANDARD LVCMOS33 } [get_ports { btnD }]; #IO_L18P_T2_A12_D28_14 ,Sch=BTND
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets i_btn_IBUF]
+#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets i_btn_IBUF]
 
 ##Pmod Header JA
 
